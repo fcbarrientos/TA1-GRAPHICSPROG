@@ -137,13 +137,31 @@ void display()
     ----------
     Add another graphical object using an appropriate
     OpenGL primitive.
-
-    Object 3
+    */
+    glColor3f(0.2f, 0.4f, 1.0f);
+    glBegin(GL_POLYGON);
+    glVertex2f(-0.65f,  0.75f);
+    glVertex2f(-0.48f,  0.65f);
+    glVertex2f(-0.48f,  0.45f);
+    glVertex2f(-0.65f,  0.35f);
+    glVertex2f(-0.82f,  0.45f);
+    glVertex2f(-0.82f,  0.65f);
+    glEnd();
+    /* Object 3
     ----------
     Add another graphical object using another primitive
-    type and another color.
-
-    Vertex Array
+    type and another color. */
+    glColor3f(1.0f, 0.2f, 0.2f);
+    glBegin(GL_POLYGON);
+    glVertex2f( 0.62f, -0.33f);
+    glVertex2f( 0.79f, -0.41f);
+    glVertex2f( 0.83f, -0.50f);
+    glVertex2f( 0.72f, -0.75f);
+    glVertex2f( 0.52f, -0.75f);
+    glVertex2f( 0.41f, -0.60f);
+    glVertex2f( 0.45f, -0.41f);
+    glEnd();
+    /* Vertex Array
     ------------
     At least one object must use vertex-array rendering.
 
@@ -155,8 +173,8 @@ void display()
         glDisableClientState(GL_VERTEX_ARRAY);
     */
 
-    //Requirement 2: Function call - ALEI
-   drawVertexArrayObject();
+    // Requirement 2: Function call - ALEI
+    drawVertexArrayObject();
 
     /*
     Text
