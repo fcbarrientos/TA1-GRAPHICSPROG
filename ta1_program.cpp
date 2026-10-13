@@ -85,8 +85,7 @@ void drawStarterTriangle()
 // ------------------------------------------------------------
 void drawVertexArrayObject()
 {
-    glColor3f(1.0f, 1.0f, 0.0f);
-
+    
     GLfloat vertices[] = {
         0.5f,  0.8f,  
         0.8f, 0.8f,  
