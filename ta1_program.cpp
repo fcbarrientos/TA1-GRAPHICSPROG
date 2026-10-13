@@ -88,17 +88,17 @@ void drawVertexArrayObject()
     glColor3f(1.0f, 1.0f, 0.0f);
 
     GLfloat vertices[] = {
-        0.5f,  0.8f,  // Top-left
-        0.8f, 0.8f,  // Top-right
-        0.8f, 0.5f,  // Bottom-right
-        0.5f, 0.5f   // Bottom-left
+        0.5f,  0.8f,  
+        0.8f, 0.8f,  
+        0.8f, 0.5f,  
+        0.5f, 0.5f   
     };
 
     GLfloat colors[] = {
-        1.0f, 1.0f, 0.0f,  // Yellow
-        1.0f, 1.0f, 0.0f,  // Yellow
-        1.0f, 0.5f, 0.0f,  // Orange
-        1.0f, 0.5f, 0.0f,  // Orange
+        1.0f, 1.0f, 0.0f,  
+        1.0f, 1.0f, 0.0f,  
+        1.0f, 0.5f, 0.0f,  
+        1.0f, 0.5f, 0.0f,  
     };
 
     glEnableClientState(GL_VERTEX_ARRAY);
