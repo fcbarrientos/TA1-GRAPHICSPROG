@@ -22,7 +22,7 @@
 */
 
 #include <iostream>
-#include <GL/freeglut.h>
+#include <GL/glut.h>
 #include <GL/freeglut_ext.h>
 
 using namespace std;
@@ -81,6 +81,37 @@ void drawStarterTriangle()
 }
 
 // ------------------------------------------------------------
+// REQUIREMENT 2: VERTEX ARRAY OBJECT
+// ------------------------------------------------------------
+void drawVertexArrayObject()
+{
+
+    GLfloat vertices[] = {
+        0.5f,  0.8f,
+        0.8f, 0.8f,
+        0.8f, 0.5f,
+        0.5f, 0.5f
+    };
+
+    GLfloat colors[] = {
+        1.0f, 1.0f, 0.0f,
+        1.0f, 1.0f, 0.0f,
+        1.0f, 0.5f, 0.0f,
+        1.0f, 0.5f, 0.0f,
+    };
+
+    glEnableClientState(GL_VERTEX_ARRAY);
+    glEnableClientState(GL_COLOR_ARRAY);
+
+    glVertexPointer(2, GL_FLOAT, 0, vertices);
+    glColorPointer(3, GL_FLOAT, 0, colors);
+    glDrawArrays(GL_QUADS, 0, 4);
+
+    glDisableClientState(GL_VERTEX_ARRAY);
+    glDisableClientState(GL_COLOR_ARRAY);
+}
+
+// ------------------------------------------------------------
 // DISPLAY CALLBACK
 // ------------------------------------------------------------
 void display()
@@ -99,6 +130,9 @@ void display()
 
     REQUIREMENTS:
 
+    // ------------------------------------------------------------
+    // REQUIREMENT 1: ADD TWO ADDITIONAL VISIBLE OBJECTS
+    // ------------------------------------------------------------
     Object 2
     ----------
     Add another graphical object using an appropriate
@@ -119,7 +153,12 @@ void display()
         glVertexPointer(...);
         glDrawArrays(...);
         glDisableClientState(GL_VERTEX_ARRAY);
+    */
 
+    //Requirement 2: Function call - ALEI
+   drawVertexArrayObject();
+
+    /*
     Text
     ----
     Display a short instruction in the window.
