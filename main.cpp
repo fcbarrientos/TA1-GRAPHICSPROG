@@ -170,14 +170,14 @@ void display()
     glColor3f(1.0f, 1.0f, 1.0f);
 
     // Text 1: Controls (Color, Reset, Exit)
-    const unsigned char text1[] = "C - Color | R - Reset | ESC - Exit";
+    const unsigned char Text1[] = "C - Color | R - Reset | ESC - Exit";
     glRasterPos2f(-0.95f, -0.85f);
-    glutBitmapString(GLUT_BITMAP_9_BY_15, text1);
+    glutBitmapString(GLUT_BITMAP_9_BY_15, Text1);
 
     // Text 2: Movement Controls
-    const unsigned char text2[] = "W - Up | S - Down | A - Left | D - Right";
-    glRasterPos2f(-0.95f, -0.95f);
-    glutBitmapString(GLUT_BITMAP_9_BY_15, text2);
+    const unsigned char Text2[] = "W - Up | S - Down | A - Left | D - Right";
+    glRasterPos2f(-0.95f, -0.93f);
+    glutBitmapString(GLUT_BITMAP_9_BY_15, Text2);
     glFlush();
 }
 
