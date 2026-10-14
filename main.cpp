@@ -94,8 +94,7 @@ void drawStarterTriangle()
 // ------------------------------------------------------------
 void drawVertexArrayObject()
 {
-    /* Object 4
-    ---------- */
+    // Object 4
     GLfloat vertices[] = {
         0.5f,  0.8f,
         0.8f, 0.8f,
@@ -137,9 +136,11 @@ void display()
     // Object 2
     glColor3f(0.2f, 0.4f, 1.0f);
     glBegin(GL_POLYGON);
+    glColor3f(0.2f, 0.4f, 1.0f);
     glVertex2f(-0.65f,  0.75f);
     glVertex2f(-0.48f,  0.65f);
     glVertex2f(-0.48f,  0.45f);
+    glColor3f(0.6f, 0.2f, 1.0f);
     glVertex2f(-0.65f,  0.35f);
     glVertex2f(-0.82f,  0.45f);
     glVertex2f(-0.82f,  0.65f);
@@ -179,7 +180,11 @@ void display()
 // ------------------------------------------------------------
 void keyboard(unsigned char key, int x, int y)
 {
-    if (key == 'a' || key == 'A')
+    if (key == 27)   // ESC key
+    {
+        exit(0);
+    }
+    else if (key == 'a' || key == 'A')
     {
         triangleX -= 0.1f;
     }
