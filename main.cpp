@@ -190,16 +190,13 @@ void display()
     // Requirement 2: Function call - ALEI
     drawVertexArrayObject();
 
+    // Requirement 4: On-screen instructions - SILVA
+    const unsigned char instructionText[] = "WASD - Move | C - Color | R - Reset";
+    glColor3f(1.0f, 1.0f, 1.0f);
+    glRasterPos2f(-0.95f, -0.90f);
+    glutBitmapString(GLUT_BITMAP_HELVETICA_18, instructionText);
+
     /*
-    Text
-    ----
-    Display a short instruction in the window.
-
-    Suggested functions:
-
-        glRasterPos2f(...);
-        glutBitmapString(...);
-
     Keyboard
     --------
     Implement one meaningful keyboard interaction.
