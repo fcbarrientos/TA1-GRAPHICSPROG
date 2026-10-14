@@ -222,7 +222,11 @@ void display()
 // ------------------------------------------------------------
 void keyboard(unsigned char key, int x, int y)
 {
-    if (key == 'a' || key == 'A')
+    if (key == 27)   // ESC key
+    {
+        exit(0);    
+    }
+    else if (key == 'a' || key == 'A')
     {
         triangleX -= 0.1f;
     }
