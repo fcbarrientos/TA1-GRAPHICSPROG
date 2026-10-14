@@ -52,13 +52,8 @@ int main(int argc, char** argv)
 
     // Already completed:
     glutDisplayFunc(display);
-    glutKeyboardFunc(keyboard);
 
-    // TODO:
-    // Register your keyboard callback here.
-    //
-    // Example:
-    // glutKeyboardFunc(keyboard);
+    glutKeyboardFunc(keyboard);
 
     glutMainLoop();
 
@@ -95,11 +90,12 @@ void drawStarterTriangle()
 }
 
 // ------------------------------------------------------------
-// REQUIREMENT 2: VERTEX ARRAY OBJECT
+// REQUIREMENT 2: VERTEX ARRAY OBJECT - ALEI
 // ------------------------------------------------------------
 void drawVertexArrayObject()
 {
-
+    /* Object 4
+    ---------- */
     GLfloat vertices[] = {
         0.5f,  0.8f,
         0.8f, 0.8f,
@@ -135,23 +131,10 @@ void display()
     // Already completed:
     drawStarterTriangle();
 
-    /*
-    ============================================================
-                       STUDENT WORK AREA
-    ============================================================
-
-    Add the rest of your scene here.
-
-    REQUIREMENTS:
-
     // ------------------------------------------------------------
-    // REQUIREMENT 1: ADD TWO ADDITIONAL VISIBLE OBJECTS
+    // REQUIREMENT 1: ADD TWO ADDITIONAL VISIBLE OBJECTS - CHESKA
     // ------------------------------------------------------------
-    Object 2
-    ----------
-    Add another graphical object using an appropriate
-    OpenGL primitive.
-    */
+    // Object 2
     glColor3f(0.2f, 0.4f, 1.0f);
     glBegin(GL_POLYGON);
     glVertex2f(-0.65f,  0.75f);
@@ -161,31 +144,23 @@ void display()
     glVertex2f(-0.82f,  0.45f);
     glVertex2f(-0.82f,  0.65f);
     glEnd();
-    /* Object 3
-    ----------
-    Add another graphical object using another primitive
-    type and another color. */
+    // Object 3
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3f(1.0f, 1.0f, 1.0f);
+    glVertex2f(0.68f, -0.61f);
     glColor3f(1.0f, 0.2f, 0.2f);
-    glBegin(GL_POLYGON);
-    glVertex2f( 0.62f, -0.33f);
-    glVertex2f( 0.79f, -0.41f);
-    glVertex2f( 0.83f, -0.50f);
-    glVertex2f( 0.72f, -0.75f);
-    glVertex2f( 0.52f, -0.75f);
-    glVertex2f( 0.41f, -0.60f);
-    glVertex2f( 0.45f, -0.41f);
+    glVertex2f(0.50f, -0.61f);
+    glColor3f(1.0f, 0.7f, 0.1f);
+    glVertex2f(0.54f, -0.52f);
+    glColor3f(0.2f, 0.8f, 0.3f);
+    glVertex2f(0.68f, -0.47f);
+    glColor3f(0.2f, 0.6f, 1.0f);
+    glVertex2f(0.82f, -0.52f);
+    glColor3f(0.7f, 0.3f, 1.0f);
+    glVertex2f(0.86f, -0.61f);
+    glColor3f(1.0f, 0.2f, 0.2f);
+    glVertex2f(0.68f, -0.61f);
     glEnd();
-    /* Vertex Array
-    ------------
-    At least one object must use vertex-array rendering.
-
-    Suggested functions:
-
-        glEnableClientState(GL_VERTEX_ARRAY);
-        glVertexPointer(...);
-        glDrawArrays(...);
-        glDisableClientState(GL_VERTEX_ARRAY);
-    */
 
     // Requirement 2: Function call - ALEI
     drawVertexArrayObject();
@@ -196,29 +171,11 @@ void display()
     glRasterPos2f(-0.95f, -0.90f);
     glutBitmapString(GLUT_BITMAP_HELVETICA_18, instructionText);
 
-    /*
-    Keyboard
-    --------
-    Implement one meaningful keyboard interaction.
-
-    Use:
-
-        glutKeyboardFunc(keyboard);
-
-    and call:
-
-        glutPostRedisplay();
-
-    when a keyboard action changes something visible.
-
-    ============================================================
-    */
-
     glFlush();
 }
 
 // ------------------------------------------------------------
-// KEYBOARD CALLBACK
+// Requirement 3: KEYBOARD CALLBACK - SIMON
 // ------------------------------------------------------------
 void keyboard(unsigned char key, int x, int y)
 {
