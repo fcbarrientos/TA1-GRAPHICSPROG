@@ -26,6 +26,9 @@
 #include <GL/freeglut_ext.h>
 
 using namespace std;
+float triangleX = 0.0f;
+float triangleY = 0.0f;
+bool changeColor = false;
 
 // ------------------------------------------------------------
 // Function Prototypes
@@ -49,6 +52,7 @@ int main(int argc, char** argv)
 
     // Already completed:
     glutDisplayFunc(display);
+    glutKeyboardFunc(keyboard);
 
     // TODO:
     // Register your keyboard callback here.
@@ -66,10 +70,18 @@ int main(int argc, char** argv)
 // ------------------------------------------------------------
 void drawStarterTriangle()
 {
-    // This object is already completed.
-    // You may keep it or use it as reference.
+    glPushMatrix();
 
-    glColor3f(0.0f, 0.8f, 0.2f);
+    glTranslatef(triangleX, triangleY, 0.0f);
+
+    if (changeColor)
+    {
+        glColor3f(1.0f, 0.0f, 1.0f); // Magenta
+    }
+    else
+    {
+        glColor3f(0.0f, 0.8f, 0.2f); // Original green
+    }
 
     glBegin(GL_TRIANGLES);
 
@@ -78,6 +90,8 @@ void drawStarterTriangle()
         glVertex2f(0.60f, -0.40f);
 
     glEnd();
+
+    glPopMatrix();
 }
 
 // ------------------------------------------------------------
@@ -211,28 +225,31 @@ void display()
 // ------------------------------------------------------------
 void keyboard(unsigned char key, int x, int y)
 {
-    /*
-        STUDENT WORK AREA
+    if (key == 'a' || key == 'A')
+    {
+        triangleX -= 0.1f;
+    }
+    else if (key == 'd' || key == 'D')
+    {
+        triangleX += 0.1f;
+    }
+    else if (key == 'w' || key == 'W')
+    {
+        triangleY += 0.1f;
+    }
+    else if (key == 's' || key == 'S')
+    {
+        triangleY -= 0.1f;
+    }
+    else if (key == 'c' || key == 'C')
+    {
+        changeColor = !changeColor;
+    }
+    else if (key == 'r' || key == 'R')
+    {
+        triangleX = 0.0f;
+        triangleY = 0.0f;
+    }
 
-        Implement at least one meaningful keyboard interaction.
-
-        Possible examples:
-
-            'a' -> move an object left
-            'd' -> move an object right
-            'r' -> reset an object
-            'c' -> change a color
-
-        Example structure:
-
-            if (key == 'r')
-            {
-                // Reset object
-                glutPostRedisplay();
-            }
-    */
-
-    (void)key;
-    (void)x;
-    (void)y;
+    glutPostRedisplay();
 }
